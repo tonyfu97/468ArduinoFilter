@@ -2,7 +2,7 @@
 % tonyfu97@uw.edu, Feb 2023
 % Credit: https://www.mathworks.com/matlabcentral/answers/1591484-i-want-to-remove-50hz-noise-using-fir-notch-filter-in-ecg-signal
 
-fs = 350;  % sampling freq in Hz
+fs = 500;  % sampling freq in Hz
 lowpass = false;
 
 if lowpass
