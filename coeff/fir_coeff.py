@@ -22,5 +22,11 @@ plt.grid(which='both', axis='both')
 plt.show()
 
 # print out coefficients in C array format
-print(f"const float h[] = {[round(coeff, 8) for coeff in hh]};");
+def print_c_array(coeff, name, dtype='float'):
+    coeff_str = f"const {dtype} {name} = {{"
+    for c in coeff:
+        coeff_str += f"{c:.8f},"
+    coeff_str += "};"
+    print(coeff_str)
+print_c_array(hh, 'h')
 print(f"filter length = {len(hh)}")

@@ -19,5 +19,12 @@ plt.grid(which='both', axis='both')
 plt.show()
 
 # print out coefficients in C array format
-print(f"const float A[] = {[round(a, 8) for a in A]};");
-print(f"const float B[] = {[round(b, 8) for b in B]};");
+def print_c_array(coeff, name, dtype='float'):
+    coeff_str = f"const {dtype} {name} = {{"
+    for c in coeff:
+        coeff_str += f"{c:.8f},"
+    coeff_str += "};"
+    print(coeff_str)
+
+print_c_array(A, 'A')
+print_c_array(B, 'B')
